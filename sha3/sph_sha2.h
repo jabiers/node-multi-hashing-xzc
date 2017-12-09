@@ -209,7 +209,11 @@ void sph_sha256_comp(const sph_u32 msg[16], sph_u32 val[8]);
 #define sph_sha256_comp   sph_sha224_comp
 #endif
 
+#if SPH_64
 
+/**
+ * Output size (in bits) for SHA-384.
+ */
 
 /**
  * Initialize a SHA-512 context. This process performs no memory allocation.
