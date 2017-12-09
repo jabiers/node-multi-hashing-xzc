@@ -4,6 +4,7 @@
 
 #include "lbry.h"
 #include <string.h>
+#include <stdio.h>
 
 
 
