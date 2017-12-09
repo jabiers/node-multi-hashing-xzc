@@ -16,6 +16,7 @@
 
 void lbry_hash(char* input, char* output)
 {
+    printf("test1");
     CHash256 h256;
     CSHA512 h512;
     CRIPEMD160 h160;
