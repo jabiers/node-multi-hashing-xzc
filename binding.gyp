@@ -30,7 +30,7 @@
 	        "Sponge.c",
                 "Lyra2RE.c",
                 "Lyra2REV2.c",
-		"Lyra2Z.c",
+		         "Lyra2Z.c",
                 "lbry.cpp",
                 "sha3/sph_hefty1.c",
                 "sha3/sph_fugue.c",
