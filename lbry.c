@@ -21,32 +21,32 @@ void lbry_hash(const void* input,void* output)
     memset(hashB, 0, 16 * sizeof(uint32_t));
     memset(hashC, 0, 16 * sizeof(uint32_t));
 
-    sph_sha256_init( &ctx_sha256 );
+    sph_sha256_init( &ctx.sha256 );
     sph_sha256 (&ctx.sha256, input, 112);
     sph_sha256_close(&ctx.sha256, hashA);
 
-    sph_sha256_init( &ctx_sha256 );
+    sph_sha256_init( &ctx.sha256 );
     sph_sha256 (&ctx.sha256, hashA, 32);
     sph_sha256_close(&ctx.sha256, hashA);
 
-    sph_sha512_init( &ctx_sha512 );
+    sph_sha512_init( &ctx.sha512 );
     sph_sha512 (&ctx.sha512, hashA, 32);
     sph_sha512_close(&ctx.sha512, hashA);
 
-    sph_ripemd160_init( &ctx_ripemd );
+    sph_ripemd160_init( &ctx.ripemd );
     sph_ripemd160 (&ctx.ripemd, hashA, 32);
     sph_ripemd160_close(&ctx.ripemd, hashB);
 
-    sph_ripemd160_init( &ctx_ripemd );
+    sph_ripemd160_init( &ctx.ripemd );
     sph_ripemd160 (&ctx.ripemd, hashA+8, 32);
     sph_ripemd160_close(&ctx.ripemd, hashC);
 
-    sph_sha256_init( &ctx_sha256 );
+    sph_sha256_init( &ctx.sha256 );
     sph_sha256 (&ctx.sha256, hashB, 20);
     sph_sha256 (&ctx.sha256, hashC, 20);
     sph_sha256_close(&ctx.sha256, hashA);
 
-    sph_sha256_init( &ctx_sha256 );
+    sph_sha256_init( &ctx.sha256 );
     sph_sha256 (&ctx.sha256, hashA, 32);
     sph_sha256_close(&ctx.sha256, hashA);
 
