@@ -27,7 +27,6 @@ extern "C" {
     #include "Lyra2.h"
     #include "Lyra2REV2.h"
     #include "Lyra2Z.h"
-    #include "lbry.h"
 }
 
 #define THROW_ERROR_EXCEPTION(x) NanThrowError(x)
