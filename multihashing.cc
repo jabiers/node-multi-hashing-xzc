@@ -605,7 +605,6 @@ NAN_METHOD(lbry) {
 
     char * input = Buffer::Data(target);
     char output[32];
-    printf("test");
     lbry_hash(input, output);
 
     NanReturnValue(

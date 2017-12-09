@@ -9,36 +9,18 @@
 
 #ifdef __cplusplus
 extern "C" {
-#endif 
+#endif
+    
+#include <stdlib.h>
+#include <stdint.h>
+#include <string.h>
+#include <stdio.h>
 
-#include "lbry/ripemd160.h"
-#include "lbry/sha256.h"
-#include "lbry/sha512.h"
-#include "lbry/common.h"
+#include "sha3/sph_sha2.h"
+#include "sha3/sph_ripemd.h"
 
 void lbry_hash(char* input, char* output);
-class CHash256 {
-private:
-    CSHA256 sha;
-public:
-    static const size_t OUTPUT_SIZE = CSHA256::OUTPUT_SIZE;
 
-    void Finalize(unsigned char hash[OUTPUT_SIZE]) {
-        unsigned char buf[sha.OUTPUT_SIZE];
-        sha.Finalize(buf);
-        sha.Reset().Write(buf, sha.OUTPUT_SIZE).Finalize(hash);
-    }
-
-    CHash256& Write(const unsigned char *data, size_t len) {
-        sha.Write(data, len);
-        return *this;
-    }
-
-    CHash256& Reset() {
-        sha.Reset();
-        return *this;
-    }
-};
 
 #ifdef __cplusplus
 }
