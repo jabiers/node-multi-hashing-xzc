@@ -1,4 +1,4 @@
-#include <lbry.h>
+#include "lbry.h"
 
 
 //#define DEBUG_ALGO
