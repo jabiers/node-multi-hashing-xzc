@@ -1,3 +1,4 @@
+
 /* $Id: sha2.c 227 2010-06-16 17:28:38Z tp $ */
 /*
  * SHA-224 / SHA-256 implementation.
