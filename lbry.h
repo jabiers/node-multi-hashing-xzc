@@ -9,7 +9,7 @@
 
 #ifdef __cplusplus
 extern "C" {
-#endif
+#endif 
 
 #include "lbry/ripemd160.h"
 #include "lbry/sha256.h"
