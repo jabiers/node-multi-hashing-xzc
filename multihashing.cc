@@ -3,6 +3,7 @@
 #include <v8.h>
 #include <stdint.h>
 #include <nan.h>
+#include <stdio.h>
 
 extern "C" {
     #include "bcrypt.h"
