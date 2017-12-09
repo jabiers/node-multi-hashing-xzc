@@ -10,7 +10,7 @@
 #ifdef __cplusplus
 extern "C" {
 #endif
-    
+
 #include <stdlib.h>
 #include <stdint.h>
 #include <string.h>
@@ -19,7 +19,7 @@ extern "C" {
 #include "sha3/sph_sha2.h"
 #include "sha3/sph_ripemd.h"
 
-void lbry_hash(char* input, char* output);
+void lbry_hash(const void* input,void* output);
 
 
 #ifdef __cplusplus

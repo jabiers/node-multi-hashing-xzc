@@ -4,7 +4,14 @@
 //#define DEBUG_ALGO
 
 /* Move init out of loop, so init once externally, and then use one single memcpy with that bigger memory block */
+typedef struct {
+    sph_sha256_context  sha256;
+    sph_sha512_context  sha512;
+    sph_ripemd160_context   ripemd;
+} lbryhash_context_holder;
 
+/* no need to copy, because close reinit the context */
+static THREADLOCAL lbryhash_context_holder ctx;
 
 void lbry_hash(const void* input,void* output)
 {
