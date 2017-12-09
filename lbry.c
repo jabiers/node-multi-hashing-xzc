@@ -11,12 +11,12 @@ typedef struct {
 } lbryhash_context_holder;
 
 /* no need to copy, because close reinit the context */
-static THREADLOCAL lbryhash_context_holder ctx;
+
 
 void lbry_hash(const void* input,void* output)
 {
     uint32_t hashA[16], hashB[16], hashC[16];
-
+    lbryhash_context_holder ctx;
     memset(hashA, 0, 16 * sizeof(uint32_t));
     memset(hashB, 0, 16 * sizeof(uint32_t));
     memset(hashC, 0, 16 * sizeof(uint32_t));
