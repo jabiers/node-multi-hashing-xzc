@@ -36,6 +36,7 @@ using namespace node;
 using namespace v8;
 
 NAN_METHOD(lbry) {
+    
     if (info.Length() < 1)
         return THROW_ERROR_EXCEPTION("You must provide one argument.");
 
@@ -49,13 +50,13 @@ NAN_METHOD(lbry) {
 
     uint32_t input_len = Buffer::Length(target);
 
-    lbry_hash(input, output);
+    fresh_hash(input, output, input_len);
 
     info.GetReturnValue().Set(Nan::NewBuffer(output, 32).ToLocalChecked());
 }
 
 
-void init(Handle<Object> exports) {
+NAN_MODULE_INIT(init) {
     Nan::Set(target, Nan::New("lbry").ToLocalChecked(), Nan::GetFunction(Nan::New<FunctionTemplate>(lbry)).ToLocalChecked());
 }
 
