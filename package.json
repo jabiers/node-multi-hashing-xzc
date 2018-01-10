@@ -11,8 +11,8 @@
     "url": "https://github.com/upgradeadvice/node-multi-hashing.git"
   },
   "dependencies": {
-    "bindings": "*",
-    "nan": "1"
+    "bindings": "^1.3.0",
+    "nan": "^2.6.2"
   },
   "keywords": [
     "scrypt",
