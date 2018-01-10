@@ -614,30 +614,7 @@ NAN_METHOD(lbry) {
 
 
 void init(Handle<Object> exports) {
-    exports->Set(NanNew<String>("quark"), NanNew<FunctionTemplate>(quark)->GetFunction());
-    exports->Set(NanNew<String>("x11"), NanNew<FunctionTemplate>(x11)->GetFunction());
-    exports->Set(NanNew<String>("scrypt"), NanNew<FunctionTemplate>(scrypt)->GetFunction());
-    exports->Set(NanNew<String>("scryptn"), NanNew<FunctionTemplate>(scryptn)->GetFunction());
-    exports->Set(NanNew<String>("scryptjane"), NanNew<FunctionTemplate>(scryptjane)->GetFunction());
-    exports->Set(NanNew<String>("keccak"), NanNew<FunctionTemplate>(keccak)->GetFunction());
-    exports->Set(NanNew<String>("bcrypt"), NanNew<FunctionTemplate>(bcrypt)->GetFunction());
-    exports->Set(NanNew<String>("skein"), NanNew<FunctionTemplate>(skein)->GetFunction());
-    exports->Set(NanNew<String>("groestl"), NanNew<FunctionTemplate>(groestl)->GetFunction());
-    exports->Set(NanNew<String>("groestlmyriad"), NanNew<FunctionTemplate>(groestlmyriad)->GetFunction());
-    exports->Set(NanNew<String>("blake"), NanNew<FunctionTemplate>(blake)->GetFunction());
-    exports->Set(NanNew<String>("fugue"), NanNew<FunctionTemplate>(fugue)->GetFunction());
-    exports->Set(NanNew<String>("qubit"), NanNew<FunctionTemplate>(qubit)->GetFunction());
-    exports->Set(NanNew<String>("hefty1"), NanNew<FunctionTemplate>(hefty1)->GetFunction());
-    exports->Set(NanNew<String>("shavite3"), NanNew<FunctionTemplate>(shavite3)->GetFunction());
-    exports->Set(NanNew<String>("x13"), NanNew<FunctionTemplate>(x13)->GetFunction());
-    exports->Set(NanNew<String>("nist5"), NanNew<FunctionTemplate>(nist5)->GetFunction());
-    exports->Set(NanNew<String>("sha1"), NanNew<FunctionTemplate>(sha1)->GetFunction());
-    exports->Set(NanNew<String>("x15"), NanNew<FunctionTemplate>(x15)->GetFunction());
-    exports->Set(NanNew<String>("fresh"), NanNew<FunctionTemplate>(fresh)->GetFunction());
-    exports->Set(NanNew<String>("lyra2re"), NanNew<FunctionTemplate>(lyra2re)->GetFunction());
-    exports->Set(NanNew<String>("lyra2rev2"), NanNew<FunctionTemplate>(lyra2rev2)->GetFunction());
-    exports->Set(NanNew<String>("lyra2z"), NanNew<FunctionTemplate>(lyra2z)->GetFunction());
-    exports->Set(NanNew<String>("lbry"), NanNew<FunctionTemplate>(lbry)->GetFunction());
+    Nan::Set(target, Nan::New("lbry").ToLocalChecked(), Nan::GetFunction(Nan::New<FunctionTemplate>(lbry)).ToLocalChecked());
 }
 
 NODE_MODULE(multihashing, init)
