@@ -50,7 +50,7 @@ NAN_METHOD(lbry) {
 
     uint32_t input_len = Buffer::Length(target);
 
-    fresh_hash(input, output, input_len);
+    lbry_hash(input, output);
 
     info.GetReturnValue().Set(Nan::NewBuffer(output, 32).ToLocalChecked());
 }
